@@ -4,7 +4,7 @@
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>个人博客</title>  
+    <title>无标题</title>  
     <style>  
         button {  
             display: inline-block; 
@@ -264,6 +264,7 @@
         
       
         window.onload = () => {  
+            document.title = settings[0].title;
             const headerText = document.getElementById('header-text');
             headerText.innerText = settings[0].header_text;
             document.getElementById('bilibilihyperlink').href = settings[0].bilibili_home;
@@ -314,7 +315,7 @@
         
             dialogContent.innerHTML = `  
                 <h2>${article.title}</h2>  
-                <div>${parsedContent}</div> <!-- 显示完整且格式正确的文章内容 -->  
+                <div>${parsedContent}</div>
             `;  
             dialogBox.classList.add('show');  
             overlay.classList.add('show');  
