@@ -8,17 +8,16 @@
     <style>  
         /* CSS样式代码 */
         button {  
-            display: inline-block; /* 使其可以与其他内联元素并排 */  
-            padding: 10px 15px; /* 内边距，控制按钮内部的空间 */  
-            color: white; /* 文字颜色 */  
-            background-color: rgba(255, 255, 255, 0.1); /* 背景颜色，这里使用了一个半透明的绿色 */  
-            border: none; /* 去除边框 */  
-            border-radius: 5px; /* 圆角，但保持较小以保持扁平化 */  
-            cursor: pointer; /* 鼠标悬停时变为手形图标 */  
-            transition: background-color 0.3s ease; /* 可选的背景色过渡效果 */  
-            text-align: center; /* 文字居中 */  
+            display: inline-block; 
+            padding: 10px 15px;
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none; 
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; 
+            text-align: center;
             transition: box-shadow 0.3s ease-in-out;
-            /* 其他您可能需要的样式，如字体大小、行高等 */  
         }  
         button:hover {  
             content: "";
@@ -31,7 +30,7 @@
             left: 0;  
             width: 100%;  
             height: 100%;  
-            transition: transform 0.3s ease-in-out; /* 平滑过渡效果 */  
+            transition: transform 0.3s ease-in-out;
             z-index: -1;
         }
         .bilibili_button {  
@@ -50,15 +49,15 @@
             justify-content: center;
         }  
         .bilibili_button:hover {
-            padding: 10px 15px; /* 内边距，控制按钮内部的空间 */ 
+            padding: 10px 15px; 
             box-shadow: 4px 4px 10px #ff6399;
         }
         .bilibili_button::before { 
             position: absolute;  
             top: 0;  
             left: 0;  
-            transition: transform 0.3s ease-in-out; /* 平滑过渡效果 */  
-            z-index: -1; /* 位于按钮内容下方 */  
+            transition: transform 0.3s ease-in-out;
+            z-index: -1;
 
         }
 
@@ -68,8 +67,8 @@
         }
 
         a {
-            text-decoration: none; /* 移除所有链接的下划线 */  
-            color: inherit; /* 继承父元素的颜色 */  
+            text-decoration: none;
+            color: inherit;
         }
 
         body {
@@ -78,8 +77,6 @@
             cursor: default;
             font-family: 'Consolas';
             margin: 0;
-
-            /*禁止滚动*/
             overflow: hidden;
             -webkit-tap-highlight-color: transparent;
         }
@@ -96,9 +93,9 @@
             user-select: none;
             font-size: 25px;
             font-weight: bold;
-            display: flex; /* 使用Flexbox布局 */  
-            justify-content: space-between; /* 内容在主轴上平均分布，第一个项目在主轴起点，最后一个项目在主轴终点 */  
-            align-items: center; /* 项目在交叉轴上居中对齐 */  
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
         }
 
         main {
@@ -112,7 +109,7 @@
         }
 
         .post {
-            margin-bottom: 100px; /* 调整这个值以改变间距大小 */  
+            margin-bottom: 100px;
             flex-basis: calc(50% - 20px);
             margin: 10px;
             background-color: rgba(255, 255, 255, 0.1);
@@ -151,20 +148,19 @@
             max-height: 80vh;  
             top: 50%;  
             left: 50%;  
-            transform: translate(-50%, -70%); /* 初始位置稍微向上偏移 */  
+            transform: translate(-50%, -70%);
             background-color: rgba(255, 255, 255, 0.1);  
             padding: 20px;  
             border-radius: 10px;  
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);  
             z-index: 9999;  
             text-align: center;  
-            opacity: 0; /* 初始透明度为0 */  
-            visibility: hidden; /* 初始不可见 */  
-            /* 移除 transition 属性，因为我们使用 keyframes 动画 */  
+            opacity: 0;
+            visibility: hidden; 
         }  
   
         .dialog-box.show {  
-            visibility: visible; /* 显示对话框 */  
+            visibility: visible;
             animation: flyIn 0.5s ease-out forwards, fadeIn 0.5s ease-out forwards;  
         }  
   
@@ -199,7 +195,7 @@
   
         .dialog-box.hide {  
             animation: flyOut 0.5s ease-in forwards;  
-            animation-delay: 0s; /* 如果需要延迟隐藏，可以调整这里 */  
+            animation-delay: 0s;
         }  
 
         .bg-overlay {
@@ -222,8 +218,8 @@
             top: 10px;
             right: 10px;
             cursor: pointer;
-            font-size: 2em; /* 调整关闭按钮的大小 */  
-            line-height: 1; /* 调整行高以匹配字体大小 */
+            font-size: 2em; 
+            line-height: 1;
         }
 
         .bg-img {
@@ -254,7 +250,7 @@
     </header> 
     <br><br>
     <main>  
-        <div class="post-container"></div> <!-- 动态创建 .post 元素将放在这里 -->
+        <div class="post-container"></div>
     </main>  
 
   
@@ -269,28 +265,25 @@
         
       
         window.onload = () => {  
-            const headerText = document.getElementById('header-text'); // 获取头部文本元素
-            headerText.innerText = settings[0].header_text; // 设置头部文本  
-            document.getElementById('bilibilihyperlink').href = settings[0].bilibili_home; // 设置B站链接 
-        };  
-      
-        // 动态创建 .post 元素并添加到 .post-container 中  
+            const headerText = document.getElementById('header-text');
+            headerText.innerText = settings[0].header_text;
+            document.getElementById('bilibilihyperlink').href = settings[0].bilibili_home;
+        };   
         const postContainer = document.querySelector('.post-container');  
         articleContents.forEach((article, index) => {  
             const post = document.createElement('div');  
             post.classList.add('post');  
             post.setAttribute('data-id', index + 1);  
       
-            // 使用正则表达式替换内容中的自定义标记  
             let parsedContent = article.content.replace(/\[img\]\((.*?)\)/g, '【图片】');  
             parsedContent = parsedContent.replace(/\[endl\]/g, ' ');
             parsedContent = parsedContent.replace(/\[downlink\]/g, '【下载链接】');  
-            if (parsedContent.length > 10) { // 假设您希望内容不超过100个字符  
+            if (parsedContent.length > 10) {
                 parsedContent = parsedContent.substring(0, 30) + '...';  
             }  
             post.innerHTML = `  
                 <h2>${article.title}</h2>  
-                <p>${parsedContent}</p> <!-- 注意这里直接使用了parsedContent，不再截取 -->  
+                <p>${parsedContent}</p>
             `;  
       
             post.addEventListener('click', () => {  
@@ -302,40 +295,31 @@
         function hideDialog() {  
             const dialogBox = document.getElementById('dialogBox');  
             dialogBox.classList.remove('show');  
-            dialogBox.classList.add('hide');  
-
-            // 监听动画结束事件，如果需要的话  
+            dialogBox.classList.add('hide'); 
             dialogBox.addEventListener('animationend', function(event) {  
                 if (event.animationName === 'flyOut') {  
-                    dialogBox.classList.remove('hide'); // 移除hide类，如果需要重置对话框状态  
-                    // 可以在这里添加其他动画结束后的处理逻辑  
+                    dialogBox.classList.remove('hide'); 
                 }  
             }, { once: true });  
         };
       
-        // 显示模态对话框的函数  
         function showDialog(index) {  
             const article = articleContents[index];  
             const dialogBox = document.getElementById('dialogBox');  
             const overlay = document.getElementById('overlay');  
             const dialogContent = document.getElementById('dialogContent');  
         
-            // 使用正则表达式替换内容中的自定义标记  
             let parsedContent = article.content.replace(/\[img\]\((.*?)\)/g, '<img src="$1" alt="Image" style="max-width: 100%; height: auto;">');  
             parsedContent = parsedContent.replace(/\[endl\]/g, '<br>');
             parsedContent = parsedContent.replace(/\[downlink\]/g, '<a href="' + article.download_link + '" download><button>下载</button></a>');  
         
-            // 使用处理后的文章内容填充对话框  
             dialogContent.innerHTML = `  
                 <h2>${article.title}</h2>  
                 <div>${parsedContent}</div> <!-- 显示完整且格式正确的文章内容 -->  
             `;  
-        
-            // 显示模态对话框和遮罩层  
             dialogBox.classList.add('show');  
             overlay.classList.add('show');  
         
-            // 添加关闭按钮的点击事件  
             const closeBtn = document.querySelector('.close-btn');  
             closeBtn.addEventListener('click', hideDialog); 
             closeBtn.addEventListener('click', function() {  
@@ -344,7 +328,6 @@
             });  
             const overlays = document.getElementById('overlay');  
             overlays.addEventListener('click', hideDialog);  
-            // 点击遮罩层时关闭对话框  
             overlays.addEventListener('click', function() {  
                 dialogBox.classList.remove('show');  
                 overlay.classList.remove('show');  
